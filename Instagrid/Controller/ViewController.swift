@@ -48,7 +48,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Layout
     
-    func layout1() {
+    private func layout1() {
         
         //layout 1 appaear
         imageRectangleUp.isHidden = false
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         btnSquareTopRight.isHidden = true
     }
     
-    func layout2() {
+    private func layout2() {
         
         //layout 1 appaear
         imageRectangleUp.isHidden = true
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         btnSquareTopRight.isHidden = false
     }
     
-    func layout3() {
+    private func layout3() {
         // Rectangle disappears
         imageRectangleUp.isHidden = true
         imageRectangleDown.isHidden = true
@@ -158,7 +158,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.present(imagePick, animated: true, completion: nil)
     }
     
-    func witchImageView(nb: Int) -> UIImageView {
+    private func witchImageView(nb: Int) -> UIImageView {
         switch activeImageView {
         case 1:
             return imageSquareTopLeft
