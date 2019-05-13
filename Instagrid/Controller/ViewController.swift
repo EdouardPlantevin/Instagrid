@@ -36,6 +36,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var btnSquareTopRight: UIButton!
     @IBOutlet weak var btnRectangleDown: UIButton!
     
+    /* Button Layout */
+    
+    @IBOutlet weak var btnLayout1: UIButton!
+    @IBOutlet weak var btnLayout2: UIButton!
+    @IBOutlet weak var btnLayout3: UIButton!
+    
     
     //Witch ImageView user click
     var activeImageView = 0
@@ -139,12 +145,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // Button Layout
     
     @IBAction func btnLayout1(_ sender: Any) {
+        btnLayout1.setImage(UIImage(named: "Selected"), for: .normal) // add image "Selected.png"
+        btnLayout2.setImage(nil, for: .normal)
+        btnLayout3.setImage(nil, for: .normal)
         layout1()
     }
     @IBAction func btnLayout2(_ sender: Any) {
+        btnLayout2.setImage(UIImage(named: "Selected"), for: .normal)
+        btnLayout1.setImage(nil, for: .normal)
+        btnLayout3.setImage(nil, for: .normal)
         layout2()
     }
     @IBAction func btnLayout3(_ sender: Any) {
+        btnLayout3.setImage(UIImage(named: "Selected"), for: .normal)
+        btnLayout2.setImage(nil, for: .normal)
+        btnLayout1.setImage(nil, for: .normal)
         layout3()
     }
     

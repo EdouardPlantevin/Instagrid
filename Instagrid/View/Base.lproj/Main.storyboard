@@ -173,21 +173,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-NK-3YU">
                                 <rect key="frame" x="50" y="791.66666666666663" width="314" height="50.333333333333371"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUN-xt-SqG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUN-xt-SqG">
                                         <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="50.333333333333336"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <connections>
                                             <action selector="btnLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxR-Fl-s2L"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0H-wW-Kt3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0H-wW-Kt3">
                                         <rect key="frame" x="123.66666666666666" y="0.0" width="66.666666666666657" height="50.333333333333336"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <connections>
                                             <action selector="btnLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pz4-XK-jK9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-90-etl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-90-etl">
                                         <rect key="frame" x="247.33333333333329" y="0.0" width="66.666666666666657" height="50.333333333333336"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <connections>
@@ -224,6 +224,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btnLayout1" destination="cUN-xt-SqG" id="PhR-hO-kgP"/>
+                        <outlet property="btnLayout2" destination="h0H-wW-Kt3" id="G2a-7R-sZv"/>
+                        <outlet property="btnLayout3" destination="Gst-90-etl" id="dF6-xK-6W6"/>
                         <outlet property="btnRectangleDown" destination="Sc8-Ej-Mjo" id="WdK-3h-LzZ"/>
                         <outlet property="btnRectangleUp" destination="7sF-th-3fi" id="uw6-3o-yC7"/>
                         <outlet property="btnSquareDownLeft" destination="ETV-hI-JMg" id="zIu-Pt-2ws"/>
