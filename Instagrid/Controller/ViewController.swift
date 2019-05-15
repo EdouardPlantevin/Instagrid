@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     // ImageView
-    
+        
     /* ---- Layout 1 ----- */
     
     // ImageView
@@ -45,6 +45,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //Witch ImageView user click
     var activeImageView = 0
+    // Wtich current Layout , default Layout 2
+    var currentLayout = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     private func layout1() {
         
+        currentLayout = 1
         //layout 1 appaear
         imageRectangleUp.isHidden = false
         imageSquareDownLeft.isHidden = false
@@ -75,6 +78,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     private func layout2() {
         
+        currentLayout = 2
         //layout 1 appaear
         imageRectangleUp.isHidden = true
         imageSquareDownLeft.isHidden = true
@@ -93,6 +97,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     private func layout3() {
+        
+        currentLayout = 3
         // Rectangle disappears
         imageRectangleUp.isHidden = true
         imageRectangleDown.isHidden = true
@@ -161,6 +167,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         btnLayout2.setImage(nil, for: .normal)
         btnLayout1.setImage(nil, for: .normal)
         layout3()
+    }
+    
+    // Button Share
+    
+    private func shareCurrentLayout() -> Array<UIImageView?> {
+        switch currentLayout {
+        case 1:
+            return [imageRectangleUp, imageSquareDownLeft, imageSquareDownRight]
+        case 2:
+            return [imageSquareTopLeft, imageSquareTopRight, imageRectangleDown]
+        case 3:
+            return [imageSquareTopRight, imageSquareTopLeft, imageSquareDownLeft, imageSquareDownRight]
+        default:
+            return [imageRectangleUp] // How put an error ?
+        }
+    }
+    
+    
+    @IBAction func btnShare(_ sender: Any) {
+            let shareItem :Array = shareCurrentLayout()
+            let activityController = UIActivityViewController(activityItems: shareItem as [Any], applicationActivities: nil)
+            if (UIDevice.current.userInterfaceIdiom == .pad) {
+                activityController.popoverPresentationController?.sourceView = self.view
+            }
+            self.present(activityController, animated: true, completion: nil)
     }
     
     
