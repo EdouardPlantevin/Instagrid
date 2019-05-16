@@ -8,12 +8,7 @@
 
 import UIKit
 
-import UIKit
-
-
-import UIKit
-
-
+// extension to render UIView to UIImage
 extension UIImage {
     convenience init(view: UIView) {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
@@ -23,6 +18,7 @@ extension UIImage {
         self.init(cgImage: image!.cgImage!)
     }
 }
+
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -65,7 +61,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         view.addGestureRecognizer(upSwipe)
     }
     
-    // Swipe
+    // Share
     
     @objc func shareSwipe(sender: UISwipeGestureRecognizer) {
         let image = UIImage(view: viewToShare)
@@ -108,7 +104,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         currentLayout = 3
         // Rectangle disappears
-
         btnRectangleDown.isHidden = true
         btnRectangleUp.isHidden = true
         
@@ -121,7 +116,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     // ----- Button -----
     
-    // Layout 1
+    @IBAction func btnImageSquareTopLeft(_ sender: Any) {
+        activeButtonView = 1
+        pickImageToLibrairie()
+    }
+    @IBAction func btnImageSquareTopRight(_ sender: Any) {
+        activeButtonView = 2
+        pickImageToLibrairie()
+    }
+    @IBAction func btnImageRectangleDown(_ sender: Any) {
+        activeButtonView = 3
+        pickImageToLibrairie()
+    }
     @IBAction func btnImageRectangleTop(_ sender: Any) {
         activeButtonView = 4
         pickImageToLibrairie()
@@ -134,22 +140,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         activeButtonView = 6
         pickImageToLibrairie()
     }
-    
-    // Layout 2
-    @IBAction func btnImageSquareTopLeft(_ sender: Any) {
-        activeButtonView = 1
-        pickImageToLibrairie()
-    }
-    @IBAction func btnImageSquareTopRight(_ sender: Any) {
-        activeButtonView = 2
-        pickImageToLibrairie()
-    }
-    
-    @IBAction func btnImageRectangleDown(_ sender: Any) {
-        activeButtonView = 3
-        pickImageToLibrairie()
-    }
-    
     
     // Button Layout
     
@@ -171,24 +161,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         btnLayout1.setImage(nil, for: .normal)
         layout3()
     }
-    
-    // Button Share
-    
-    
-    @IBAction func btnShare(_ sender: Any) {
-    }
-    
-    
+        
     //  3 Func to add new photo in a good imageView
     
-    func pickImageToLibrairie() {
+    private func pickImageToLibrairie() {
         let imagePick = UIImagePickerController()
         imagePick.sourceType = .photoLibrary
         imagePick.delegate = self
         self.present(imagePick, animated: true, completion: nil)
     }
     
-    private func witchImageView(nb: Int) -> UIButton {
+    private func witchButton(nb: Int) -> UIButton {
         switch activeButtonView {
         case 1:
             return btnSquareTopLeft
@@ -210,8 +193,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imagePick = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            witchImageView(nb: activeButtonView).setImage(imagePick, for: .normal)
-            witchImageView(nb: activeButtonView).subviews.first?.contentMode = .scaleAspectFill
+            witchButton(nb: activeButtonView).setImage(imagePick, for: .normal)
+            witchButton(nb: activeButtonView).subviews.first?.contentMode = .scaleAspectFill
             
         }
         self.dismiss(animated: true, completion: nil)
