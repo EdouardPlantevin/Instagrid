@@ -73,7 +73,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         //$$$$$$$$ ?? disparait sinon ??$$$$$$$$$$
         imageSwipe.image = UIImage(named: "Arrow Up")
-        
     }
     
     // Rotation
@@ -98,16 +97,39 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @objc func shareSwipe(sender: UISwipeGestureRecognizer) {
         if UIDevice.current.orientation.isLandscape {
             if sender.direction == .left {
+                viewToShareGoOut()
                 let image = UIImage(view: viewToShare)
                 let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
                 present(activityController, animated: true, completion: nil)
+                activityController.completionWithItemsHandler = { activity, success, items, error in
+                    self.viewToShareComeback()
+                }
             }
         } else if UIDevice.current.orientation.isPortrait {
             if sender.direction == .up {
+                viewToShareGoOut()
                 let image = UIImage(view: viewToShare)
                 let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
                 present(activityController, animated: true, completion: nil)
+                activityController.completionWithItemsHandler = { activity, success, items, error in
+                    self.viewToShareComeback()
+                }
             }
+        }
+
+    }
+    
+    // Animation of viewToShare
+    
+    func viewToShareGoOut() {
+        UIView.animate(withDuration: 0.5) {
+            self.viewToShare.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+        }
+    }
+    
+    func viewToShareComeback() {
+        UIView.animate(withDuration: 0.5) {
+            self.viewToShare.transform = .identity
         }
     }
     
