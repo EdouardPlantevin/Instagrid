@@ -96,9 +96,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // Share
     
     @objc func shareSwipe(sender: UISwipeGestureRecognizer) {
-        let image = UIImage(view: viewToShare)
-        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        present(activityController, animated: true, completion: nil)
+        if UIDevice.current.orientation.isLandscape {
+            if sender.direction == .left {
+                let image = UIImage(view: viewToShare)
+                let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                present(activityController, animated: true, completion: nil)
+            }
+        } else if UIDevice.current.orientation.isPortrait {
+            if sender.direction == .up {
+                let image = UIImage(view: viewToShare)
+                let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                present(activityController, animated: true, completion: nil)
+            }
+        }
     }
     
     
