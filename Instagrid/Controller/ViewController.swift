@@ -23,6 +23,12 @@ extension UIImage {
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     // ImageView
+    
+    /* Label swipe + image Up or Left */
+    
+    @IBOutlet weak var imageSwipe: UIImageView!
+    @IBOutlet weak var labelSwipe: UILabel!
+    
         
     /* ---- Button LayoutImage ----- */
     
@@ -55,11 +61,37 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         layout2()
         // Do any additional setup after loading the view.
         
-        // Swipe
+    
+        // SwipeGesture 
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe(sender:)))
+        leftSwipe.direction = .left
+        view.addGestureRecognizer(leftSwipe)
+        
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe(sender:)))
         upSwipe.direction = .up
         view.addGestureRecognizer(upSwipe)
+        
+        //$$$$$$$$ ?? disparait sinon ??$$$$$$$$$$
+        imageSwipe.image = UIImage(named: "Arrow Up")
+        
     }
+    
+    // Rotation
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            labelSwipe.text = "Swipe left to share"
+            imageSwipe.image = UIImage(named: "Arrow Left")
+
+        } else {
+
+            labelSwipe.text = "Swipe up to share"
+            imageSwipe.image = UIImage(named: "Arrow Up")
+        }
+    }
+
+
     
     // Share
     
