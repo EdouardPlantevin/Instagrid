@@ -8,21 +8,9 @@
 
 import UIKit
 
-// extension to render UIView to UIImage
-extension UIImage {
-    convenience init(view: UIView) {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.init(cgImage: image!.cgImage!)
-    }
-}
-
-
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    // ImageView
+    // ---------- OUTLET ---------- //
     
     /* Label swipe + image Up or Left */
     
@@ -50,9 +38,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var viewToShare: UIView!
     
     
-    //Witch ImageView user click
+    //Witch button user click, Useful for func 'witchButton(nb: Int)'
     var activeButtonView = 0
-    // Wtich current Layout , default Layout 2
+    // Witch current Layout , default Layout 2
     var currentLayout = 2
     
     
@@ -82,9 +70,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if UIDevice.current.orientation.isLandscape {
             labelSwipe.text = "Swipe left to share"
             imageSwipe.image = UIImage(named: "Arrow Left")
-
         } else {
-
             labelSwipe.text = "Swipe up to share"
             imageSwipe.image = UIImage(named: "Arrow Up")
         }
@@ -96,23 +82,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @objc func shareSwipe(sender: UISwipeGestureRecognizer) {
         if UIDevice.current.orientation.isLandscape {
-            if sender.direction == .left {
-                viewToShareGoOut()
-                let image = UIImage(view: viewToShare)
+            if sender.direction == .left { // if landscape && swipe left
+                
+                viewToShareGoOut() // Animation go out
+                
+                let image = UIImage(view: viewToShare) // Tranform View to ImageView
                 let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
                 present(activityController, animated: true, completion: nil)
+                
+                // When activity controller go away
                 activityController.completionWithItemsHandler = { activity, success, items, error in
-                    self.viewToShareComeback()
+                    self.viewToShareComeback() // Animation come back
                 }
             }
         } else if UIDevice.current.orientation.isPortrait {
-            if sender.direction == .up {
-                viewToShareGoOut()
-                let image = UIImage(view: viewToShare)
+            if sender.direction == .up { // if portrait && swipe up
+                
+                viewToShareGoOut() // Animation go out
+                
+                let image = UIImage(view: viewToShare) // Tranform View to ImageView
                 let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
                 present(activityController, animated: true, completion: nil)
+                
+                // When activity controller go away
                 activityController.completionWithItemsHandler = { activity, success, items, error in
-                    self.viewToShareComeback()
+                    self.viewToShareComeback() // Animation come back
                 }
             }
         }
@@ -121,13 +115,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Animation of viewToShare
     
-    func viewToShareGoOut() {
+    // Use for go out
+    private func viewToShareGoOut() {
         UIView.animate(withDuration: 0.5) {
             self.viewToShare.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
         }
     }
     
-    func viewToShareComeback() {
+    // Use for come back
+    private func viewToShareComeback() {
         UIView.animate(withDuration: 0.5) {
             self.viewToShare.transform = .identity
         }
@@ -209,20 +205,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func btnLayout1(_ sender: Any) {
         btnLayout1.setImage(UIImage(named: "Selected"), for: .normal) // add image "Selected.png"
-        btnLayout2.setImage(nil, for: .normal)
+        btnLayout2.setImage(nil, for: .normal) // delete image "Selected.png"
         btnLayout3.setImage(nil, for: .normal)
         layout1()
     }
     @IBAction func btnLayout2(_ sender: Any) {
-        btnLayout2.setImage(UIImage(named: "Selected"), for: .normal)
         btnLayout1.setImage(nil, for: .normal)
+        btnLayout2.setImage(UIImage(named: "Selected"), for: .normal)
         btnLayout3.setImage(nil, for: .normal)
         layout2()
     }
     @IBAction func btnLayout3(_ sender: Any) {
-        btnLayout3.setImage(UIImage(named: "Selected"), for: .normal)
         btnLayout2.setImage(nil, for: .normal)
         btnLayout1.setImage(nil, for: .normal)
+        btnLayout3.setImage(UIImage(named: "Selected"), for: .normal)
         layout3()
     }
         

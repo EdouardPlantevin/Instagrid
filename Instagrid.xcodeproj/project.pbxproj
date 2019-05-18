@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A28D3CD229024F900CA54A4 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28D3CC229024F900CA54A4 /* UIImage.swift */; };
 		7A4652152281B24C00C4AFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4652142281B24C00C4AFED /* AppDelegate.swift */; };
 		7A4652172281B24C00C4AFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4652162281B24C00C4AFED /* ViewController.swift */; };
 		7A46521A2281B24C00C4AFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4652182281B24C00C4AFED /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A28D3CC229024F900CA54A4 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		7A4652112281B24C00C4AFED /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4652142281B24C00C4AFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A4652162281B24C00C4AFED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A28D3CB229024D200CA54A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7A28D3CC229024F900CA54A4 /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7A4652082281B24C00C4AFED = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		7A4652132281B24C00C4AFED /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				7A28D3CB229024D200CA54A4 /* Extension */,
 				7A4652292281B29A00C4AFED /* Supporting Files */,
 				7A4652282281B27000C4AFED /* View */,
 				7A4652272281B26600C4AFED /* Controller */,
@@ -167,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A28D3CD229024F900CA54A4 /* UIImage.swift in Sources */,
 				7A4652172281B24C00C4AFED /* ViewController.swift in Sources */,
 				7A4652152281B24C00C4AFED /* AppDelegate.swift in Sources */,
 			);
