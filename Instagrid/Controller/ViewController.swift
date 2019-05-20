@@ -37,14 +37,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var viewToShare: UIView!
     
     //Witch button user click, Useful for func 'witchButton()'
-    var activeButtonView = 0
+    var activeButtonView: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layout2()
         // Do any additional setup after loading the view.
         
-    
+
         // SwipeGesture 
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe(sender:)))
         leftSwipe.direction = .left
@@ -53,9 +53,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe(sender:)))
         upSwipe.direction = .up
         view.addGestureRecognizer(upSwipe)
-        
-        //$$$$$$$$ ?? disparait sinon ??$$$$$$$$$$
-        imageSwipe.image = UIImage(named: "Arrow Up")
     }
     
     
@@ -75,7 +72,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // Share
     
     @objc func shareSwipe(sender: UISwipeGestureRecognizer) {
-        if UIDevice.current.orientation.isLandscape && sender.direction == .left {  // if landscape && swipe left
+        if (UIDevice.current.orientation.isLandscape && sender.direction == .left) || (UIDevice.current.orientation.isPortrait && sender.direction == .up) {  // if landscape && swipe left
             viewToShareGoOut() // Animation go out
                 
             let image = UIImage(view: viewToShare) // Tranform View to ImageView
@@ -86,19 +83,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             activityController.completionWithItemsHandler = { activity, success, items, error in
                 self.viewToShareComeback() // Animation come back
             }
-        } else if UIDevice.current.orientation.isPortrait && sender.direction == .up {  // if portrait && swipe up
-            viewToShareGoOut() // Animation go out
-                
-            let image = UIImage(view: viewToShare) // Tranform View to ImageView
-            let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            present(activityController, animated: true, completion: nil)
-                
-            // When activity controller go away
-            activityController.completionWithItemsHandler = { activity, success, items, error in
-                self.viewToShareComeback() // Animation come back
-            }
         }
-
     }
     
     // Animation of viewToShare
@@ -107,6 +92,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     private func viewToShareGoOut() {
         UIView.animate(withDuration: 0.5) {
             self.viewToShare.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            self.viewToShare.alpha = 0
         }
     }
     
@@ -114,6 +100,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     private func viewToShareComeback() {
         UIView.animate(withDuration: 0.5) {
             self.viewToShare.transform = .identity
+            self.viewToShare.alpha = 1
         }
     }
     
@@ -160,33 +147,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
 
     // ---------- Button ---------- //
-    
-    // Button pick image
-    
-    @IBAction func btnImageSquareTopLeft(_ sender: Any) {
-        activeButtonView = 1
-        pickImageToLibrairie()
-    }
-    @IBAction func btnImageSquareTopRight(_ sender: Any) {
-        activeButtonView = 2
-        pickImageToLibrairie()
-    }
-    @IBAction func btnImageRectangleDown(_ sender: Any) {
-        activeButtonView = 3
-        pickImageToLibrairie()
-    }
-    @IBAction func btnImageRectangleTop(_ sender: Any) {
-        activeButtonView = 4
-        pickImageToLibrairie()
-    }
-    @IBAction func btnImageSquareDownLeft(_ sender: Any) {
-        activeButtonView = 5
-        pickImageToLibrairie()
-    }
-    @IBAction func btnImageSquareDownRight(_ sender: Any) {
-        activeButtonView = 6
-        pickImageToLibrairie()
-    }
+
     
     // Button Layout
     
@@ -209,39 +170,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         layout3()
     }
         
-    //  3 Func to add new photo in a good button
+    //  All buttonImage call pickImageToLibrairie
     
-    private func pickImageToLibrairie() {
+    @IBAction func pickImageToLibrairie(_ sender: Any) {
+        activeButtonView = sender as? UIButton
         let imagePick = UIImagePickerController()
         imagePick.sourceType = .photoLibrary
         imagePick.delegate = self
         self.present(imagePick, animated: true, completion: nil)
     }
-    
-    private func witchButton() -> UIButton {
-        switch activeButtonView {
-        case 1:
-            return btnSquareTopLeft
-        case 2:
-            return btnSquareTopRight
-        case 3:
-            return btnRectangleDown
-        case 4:
-            return btnRectangleUp
-        case 5:
-            return btnSquareDownLeft
-        case 6:
-            return btnSquareDownRight
-        default:
-            return btnSquareTopLeft
-        }
-    }
+
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imagePick = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            witchButton().setImage(imagePick, for: .normal)
-            witchButton().subviews.first?.contentMode = .scaleAspectFill
+            activeButtonView!.setImage(imagePick, for: .normal)
+            activeButtonView!.subviews.first?.contentMode = .scaleAspectFill
         }
         self.dismiss(animated: true, completion: nil)
     }
