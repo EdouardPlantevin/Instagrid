@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A28D3CD229024F900CA54A4 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28D3CC229024F900CA54A4 /* UIImage.swift */; };
+		7A28D3CF22929BDF00CA54A4 /* Delm.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A28D3CE22929BDF00CA54A4 /* Delm.otf */; };
+		7A28D3D122929D4E00CA54A4 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A28D3D022929D4E00CA54A4 /* ThirstySoftRegular.otf */; };
 		7A4652152281B24C00C4AFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4652142281B24C00C4AFED /* AppDelegate.swift */; };
 		7A4652172281B24C00C4AFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4652162281B24C00C4AFED /* ViewController.swift */; };
 		7A46521A2281B24C00C4AFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4652182281B24C00C4AFED /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		7A28D3CC229024F900CA54A4 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		7A28D3CE22929BDF00CA54A4 /* Delm.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delm.otf; sourceTree = "<group>"; };
+		7A28D3D022929D4E00CA54A4 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		7A4652112281B24C00C4AFED /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4652142281B24C00C4AFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A4652162281B24C00C4AFED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				7A4652272281B26600C4AFED /* Controller */,
 				7A4652262281B25B00C4AFED /* Model */,
 				7A4652202281B24D00C4AFED /* Info.plist */,
+				7A28D3D022929D4E00CA54A4 /* ThirstySoftRegular.otf */,
+				7A28D3CE22929BDF00CA54A4 /* Delm.otf */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
@@ -166,6 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A46521F2281B24D00C4AFED /* LaunchScreen.storyboard in Resources */,
+				7A28D3CF22929BDF00CA54A4 /* Delm.otf in Resources */,
+				7A28D3D122929D4E00CA54A4 /* ThirstySoftRegular.otf in Resources */,
 				7A46521C2281B24D00C4AFED /* Assets.xcassets in Resources */,
 				7A46521A2281B24C00C4AFED /* Main.storyboard in Resources */,
 			);
