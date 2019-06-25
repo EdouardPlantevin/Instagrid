@@ -46,9 +46,11 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCc-Id-VgF">
                                         <rect key="frame" x="10" y="10" width="142.5" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="23" label="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wCc-Id-VgF" secondAttribute="height" multiplier="1:1" id="8Tm-m8-efi"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="Plus">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -59,9 +61,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-Ba-n3q">
                                         <rect key="frame" x="162.5" y="10" width="142.5" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="23" label="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jPt-Ba-n3q" secondAttribute="height" multiplier="1:1" id="qxF-RC-Pdr"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="Plus"/>
                                         <connections>
                                             <action selector="pickImageToLibrairie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zsw-vY-ruh"/>
@@ -70,6 +74,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc8-Ej-Mjo">
                                         <rect key="frame" x="10" y="162.5" width="295" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="2" label="2"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="Plus"/>
                                         <connections>
                                             <action selector="pickImageToLibrairie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9IA-hO-fpe"/>
@@ -78,6 +84,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-th-3fi">
                                         <rect key="frame" x="10" y="10" width="295" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="1" label="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="Plus"/>
                                         <connections>
                                             <action selector="pickImageToLibrairie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eHf-CM-qWT"/>
@@ -86,9 +94,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETV-hI-JMg">
                                         <rect key="frame" x="10" y="162.5" width="142.5" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="13" label="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ETV-hI-JMg" secondAttribute="height" multiplier="1:1" id="qkp-MS-Q4m"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="Plus"/>
                                         <connections>
                                             <action selector="pickImageToLibrairie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k37-Jq-sMT"/>
@@ -97,9 +107,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfU-tb-Q4g">
                                         <rect key="frame" x="162.5" y="162.5" width="142.5" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="31" label="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nfU-tb-Q4g" secondAttribute="height" multiplier="1:1" id="1qh-Mt-B42"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="Plus"/>
                                         <connections>
                                             <action selector="pickImageToLibrairie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EP9-ZS-kli"/>
@@ -134,28 +146,9 @@
                                     <constraint firstItem="7sF-th-3fi" firstAttribute="leading" secondItem="oqD-VK-lDw" secondAttribute="leading" constant="10" id="zsO-lo-5E1"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0H-wW-Kt3">
-                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="h0H-wW-Kt3" secondAttribute="height" multiplier="1:1" id="a5e-Jh-uza"/>
-                                </constraints>
-                                <state key="normal" image="Selected" backgroundImage="Layout 2"/>
-                                <connections>
-                                    <action selector="btnLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pz4-XK-jK9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-90-etl">
-                                <rect key="frame" x="265" y="587" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Gst-90-etl" secondAttribute="height" multiplier="1:1" id="N4N-hk-FT9"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Layout 3"/>
-                                <connections>
-                                    <action selector="btnLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qlD-y4-mMk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUN-xt-SqG">
                                 <rect key="frame" x="50" y="587" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="layout1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cUN-xt-SqG" secondAttribute="height" multiplier="1:1" id="A7l-f9-yrN"/>
                                     <constraint firstAttribute="height" constant="60" id="MJ8-LX-Igt"/>
@@ -163,7 +156,29 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Layout 1"/>
                                 <connections>
-                                    <action selector="btnLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxR-Fl-s2L"/>
+                                    <action selector="btnLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrC-H1-of6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0H-wW-Kt3">
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="layout2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h0H-wW-Kt3" secondAttribute="height" multiplier="1:1" id="a5e-Jh-uza"/>
+                                </constraints>
+                                <state key="normal" image="Selected" backgroundImage="Layout 2"/>
+                                <connections>
+                                    <action selector="btnLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PzM-qr-Loc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-90-etl">
+                                <rect key="frame" x="265" y="587" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="layout3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gst-90-etl" secondAttribute="height" multiplier="1:1" id="N4N-hk-FT9"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Layout 3"/>
+                                <connections>
+                                    <action selector="btnLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NFK-om-InN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-cn-oCl">
@@ -259,10 +274,13 @@
                                 <exclude reference="usg-Ve-VBA"/>
                                 <exclude reference="5go-ny-gns"/>
                                 <exclude reference="KDT-ex-x9I"/>
-                                <exclude reference="0Km-PT-hp7"/>
-                                <exclude reference="dUK-GI-DKu"/>
-                                <exclude reference="fGL-BI-M0u"/>
-                                <exclude reference="zjP-oI-cWK"/>
+                                <exclude reference="EtV-UA-fHt"/>
+                                <exclude reference="aUq-Fi-0Ds"/>
+                                <exclude reference="dzr-u9-DsV"/>
+                                <exclude reference="fN5-1k-MbR"/>
+                                <exclude reference="g3k-bq-FeL"/>
+                                <exclude reference="gFV-0A-hGW"/>
+                                <exclude reference="pZH-4g-KQP"/>
                                 <exclude reference="0Js-7C-hEw"/>
                                 <exclude reference="APm-KA-cGu"/>
                                 <exclude reference="Fva-4j-p6j"/>
@@ -275,13 +293,10 @@
                                 <exclude reference="njU-do-Ucy"/>
                                 <exclude reference="qZi-4a-wpN"/>
                                 <exclude reference="tXp-9g-OYe"/>
-                                <exclude reference="EtV-UA-fHt"/>
-                                <exclude reference="aUq-Fi-0Ds"/>
-                                <exclude reference="dzr-u9-DsV"/>
-                                <exclude reference="fN5-1k-MbR"/>
-                                <exclude reference="g3k-bq-FeL"/>
-                                <exclude reference="gFV-0A-hGW"/>
-                                <exclude reference="pZH-4g-KQP"/>
+                                <exclude reference="0Km-PT-hp7"/>
+                                <exclude reference="dUK-GI-DKu"/>
+                                <exclude reference="fGL-BI-M0u"/>
+                                <exclude reference="zjP-oI-cWK"/>
                                 <exclude reference="D7x-BY-WBO"/>
                                 <exclude reference="EFS-If-MRf"/>
                                 <exclude reference="Pq7-BJ-r6Y"/>
@@ -303,17 +318,6 @@
                                 <include reference="usg-Ve-VBA"/>
                                 <exclude reference="vsH-PO-HXH"/>
                                 <include reference="5go-ny-gns"/>
-                                <exclude reference="UjP-jn-jRz"/>
-                                <exclude reference="bI3-SY-LqZ"/>
-                                <exclude reference="dUK-GI-DKu"/>
-                                <exclude reference="fGL-BI-M0u"/>
-                                <include reference="0Js-7C-hEw"/>
-                                <exclude reference="Dof-E7-77l"/>
-                                <include reference="Fva-4j-p6j"/>
-                                <exclude reference="Kte-6A-hkQ"/>
-                                <include reference="MOO-XY-2jy"/>
-                                <include reference="O54-jz-8La"/>
-                                <exclude reference="WiH-qQ-JLv"/>
                                 <exclude reference="0s5-kr-hDI"/>
                                 <exclude reference="EtV-UA-fHt"/>
                                 <exclude reference="aUq-Fi-0Ds"/>
@@ -322,6 +326,17 @@
                                 <exclude reference="m4e-mG-cnL"/>
                                 <exclude reference="qKy-0u-ljc"/>
                                 <exclude reference="uoi-bh-JYz"/>
+                                <include reference="0Js-7C-hEw"/>
+                                <exclude reference="Dof-E7-77l"/>
+                                <include reference="Fva-4j-p6j"/>
+                                <exclude reference="Kte-6A-hkQ"/>
+                                <include reference="MOO-XY-2jy"/>
+                                <include reference="O54-jz-8La"/>
+                                <exclude reference="WiH-qQ-JLv"/>
+                                <exclude reference="UjP-jn-jRz"/>
+                                <exclude reference="bI3-SY-LqZ"/>
+                                <exclude reference="dUK-GI-DKu"/>
+                                <exclude reference="fGL-BI-M0u"/>
                                 <exclude reference="cAr-cD-bbc"/>
                                 <include reference="D7x-BY-WBO"/>
                                 <include reference="EFS-If-MRf"/>
@@ -342,10 +357,13 @@
                                 <exclude reference="oxm-2w-2KL"/>
                                 <exclude reference="vsH-PO-HXH"/>
                                 <include reference="KDT-ex-x9I"/>
-                                <exclude reference="0Km-PT-hp7"/>
-                                <exclude reference="UjP-jn-jRz"/>
-                                <exclude reference="bI3-SY-LqZ"/>
-                                <exclude reference="zjP-oI-cWK"/>
+                                <exclude reference="0s5-kr-hDI"/>
+                                <exclude reference="g3k-bq-FeL"/>
+                                <include reference="gFV-0A-hGW"/>
+                                <exclude reference="m4e-mG-cnL"/>
+                                <include reference="pZH-4g-KQP"/>
+                                <exclude reference="qKy-0u-ljc"/>
+                                <exclude reference="uoi-bh-JYz"/>
                                 <include reference="APm-KA-cGu"/>
                                 <exclude reference="Dof-E7-77l"/>
                                 <exclude reference="QEL-8M-5fZ"/>
@@ -355,13 +373,10 @@
                                 <include reference="njU-do-Ucy"/>
                                 <include reference="qZi-4a-wpN"/>
                                 <exclude reference="tXp-9g-OYe"/>
-                                <exclude reference="0s5-kr-hDI"/>
-                                <exclude reference="g3k-bq-FeL"/>
-                                <include reference="gFV-0A-hGW"/>
-                                <exclude reference="m4e-mG-cnL"/>
-                                <include reference="pZH-4g-KQP"/>
-                                <exclude reference="qKy-0u-ljc"/>
-                                <exclude reference="uoi-bh-JYz"/>
+                                <exclude reference="0Km-PT-hp7"/>
+                                <exclude reference="UjP-jn-jRz"/>
+                                <exclude reference="bI3-SY-LqZ"/>
+                                <exclude reference="zjP-oI-cWK"/>
                                 <exclude reference="cAr-cD-bbc"/>
                                 <exclude reference="Pq7-BJ-r6Y"/>
                                 <exclude reference="TDx-Ct-9C6"/>
@@ -372,18 +387,18 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="btnLayout1" destination="cUN-xt-SqG" id="PhR-hO-kgP"/>
-                        <outlet property="btnLayout2" destination="h0H-wW-Kt3" id="G2a-7R-sZv"/>
-                        <outlet property="btnLayout3" destination="Gst-90-etl" id="dF6-xK-6W6"/>
-                        <outlet property="btnRectangleDown" destination="Sc8-Ej-Mjo" id="WdK-3h-LzZ"/>
-                        <outlet property="btnRectangleUp" destination="7sF-th-3fi" id="uw6-3o-yC7"/>
-                        <outlet property="btnSquareDownLeft" destination="ETV-hI-JMg" id="zIu-Pt-2ws"/>
-                        <outlet property="btnSquareDownRight" destination="nfU-tb-Q4g" id="cj6-xW-X8G"/>
-                        <outlet property="btnSquareTopLeft" destination="wCc-Id-VgF" id="3M2-te-FTK"/>
-                        <outlet property="btnSquareTopRight" destination="jPt-Ba-n3q" id="W60-Sd-P7B"/>
                         <outlet property="imageSwipe" destination="J8W-F5-wGa" id="nw9-P2-FcD"/>
                         <outlet property="labelSwipe" destination="oVE-uP-hDA" id="LI6-la-Ea1"/>
                         <outlet property="viewToShare" destination="oqD-VK-lDw" id="jg0-Xw-pdJ"/>
+                        <outletCollection property="arrayButtonImage" destination="wCc-Id-VgF" collectionClass="NSMutableArray" id="cTl-Bi-UPN"/>
+                        <outletCollection property="arrayButtonImage" destination="jPt-Ba-n3q" collectionClass="NSMutableArray" id="RSP-z1-v9P"/>
+                        <outletCollection property="arrayButtonImage" destination="Sc8-Ej-Mjo" collectionClass="NSMutableArray" id="ERX-rX-syf"/>
+                        <outletCollection property="arrayButtonImage" destination="7sF-th-3fi" collectionClass="NSMutableArray" id="dqu-Fu-2Ll"/>
+                        <outletCollection property="arrayButtonImage" destination="ETV-hI-JMg" collectionClass="NSMutableArray" id="qXa-5Y-yPp"/>
+                        <outletCollection property="arrayButtonImage" destination="nfU-tb-Q4g" collectionClass="NSMutableArray" id="ZPM-VL-j1a"/>
+                        <outletCollection property="arrayButtonLayout" destination="cUN-xt-SqG" collectionClass="NSMutableArray" id="3jk-WP-C4c"/>
+                        <outletCollection property="arrayButtonLayout" destination="h0H-wW-Kt3" collectionClass="NSMutableArray" id="tQ4-FC-EAr"/>
+                        <outletCollection property="arrayButtonLayout" destination="Gst-90-etl" collectionClass="NSMutableArray" id="Np0-v1-fgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

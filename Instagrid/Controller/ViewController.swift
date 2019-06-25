@@ -13,35 +13,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // ---------- OUTLET ---------- //
     
     /* Label swipe + image Up or Left */
-    
     @IBOutlet weak var imageSwipe: UIImageView!
     @IBOutlet weak var labelSwipe: UILabel!
     
     /* ---- Button LayoutImage ----- */
-    
-    @IBOutlet weak var btnRectangleUp: UIButton!
-    @IBOutlet weak var btnSquareDownLeft: UIButton!
-    @IBOutlet weak var btnSquareDownRight: UIButton!
-    @IBOutlet weak var btnSquareTopLeft: UIButton!
-    @IBOutlet weak var btnSquareTopRight: UIButton!
-    @IBOutlet weak var btnRectangleDown: UIButton!
+    @IBOutlet var arrayButtonImage: [UIButton]!
     
     /* Button Layout */
-    
-    @IBOutlet weak var btnLayout1: UIButton!
-    @IBOutlet weak var btnLayout2: UIButton!
-    @IBOutlet weak var btnLayout3: UIButton!
+    @IBOutlet var arrayButtonLayout: [UIButton]!
     
     /* View to share */
-    
     @IBOutlet weak var viewToShare: UIView!
     
     //Witch button user click, Useful for func 'witchButton()'
     var activeButtonView: UIButton?
+    var layout: Layout?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layout2()
+        layout = Layout(arrayButtonImage: arrayButtonImage, arrayButtonLayout: arrayButtonLayout)
         // Do any additional setup after loading the view.
         
 
@@ -104,70 +94,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    
-    // Layout
-    
-    private func layout1() {
-        
-        //layout 1 appaear
-        btnRectangleUp.isHidden = false
-        btnSquareDownLeft.isHidden = false
-        btnSquareDownRight.isHidden = false
-        
-        //layout 2 hidden
-        btnSquareTopLeft.isHidden = true
-        btnRectangleDown.isHidden = true
-        btnSquareTopRight.isHidden = true
-    }
-    
-    private func layout2() {
-        
-        //layout 1 appaear
-        btnRectangleUp.isHidden = true
-        btnSquareDownLeft.isHidden = true
-        btnSquareDownRight.isHidden = true
-        
-        //layout 2 hidden
-        btnSquareTopLeft.isHidden = false
-        btnRectangleDown.isHidden = false
-        btnSquareTopRight.isHidden = false
-    }
-    
-    private func layout3() {
-        
-        // Rectangle disappears
-        btnRectangleDown.isHidden = true
-        btnRectangleUp.isHidden = true
-        
-        // Square Appears
-        btnSquareDownLeft.isHidden = false
-        btnSquareDownRight.isHidden = false
-        btnSquareTopRight.isHidden = false
-        btnSquareTopLeft.isHidden = false
-    }
-
     // ---------- Button ---------- //
 
     
     // Button Layout
     
-    @IBAction func btnLayout1(_ sender: Any) {
-        btnLayout1.setImage(UIImage(named: "Selected"), for: .normal) // add image "Selected.png"
-        btnLayout2.setImage(nil, for: .normal) // delete image "Selected.png"
-        btnLayout3.setImage(nil, for: .normal)
-        layout1()
-    }
-    @IBAction func btnLayout2(_ sender: Any) {
-        btnLayout1.setImage(nil, for: .normal)
-        btnLayout2.setImage(UIImage(named: "Selected"), for: .normal)
-        btnLayout3.setImage(nil, for: .normal)
-        layout2()
-    }
-    @IBAction func btnLayout3(_ sender: Any) {
-        btnLayout2.setImage(nil, for: .normal)
-        btnLayout1.setImage(nil, for: .normal)
-        btnLayout3.setImage(UIImage(named: "Selected"), for: .normal)
-        layout3()
+    @IBAction func btnLayout(_ sender: Any) {
+        let button: UIButton = sender as! UIButton
+        layout!.changeLayout(witchLayout: button.accessibilityIdentifier!)
     }
         
     //  All buttonImage call pickImageToLibrairie
